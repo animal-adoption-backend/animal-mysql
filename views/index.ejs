@@ -13,8 +13,8 @@
     <title>회원가입</title>
 
     <script>
-        
-        
+
+
         function submitAnimal() {
             let title = $('#title').val();
             let name = $('#name').val();
@@ -25,11 +25,13 @@
             let story = $('#story').val();
             let img = $('#img').val();
 
-            
+
             $.ajax({
                 type: "POST",
                 url: `/api/animals`,
                 data: {
+                    userId: 1,
+                    animalId: 2,
                     title: title,
                     animalName: name,
                     animalSpecies: species,
@@ -37,7 +39,7 @@
                     animalAge: age,
                     animalGender: gender,
                     animalStory: story,
-                    animalPhoto: photo,
+                    animalPhoto: img,
                 },
                 success: function (response) {
                     console.log("submitting animal POST API successful");

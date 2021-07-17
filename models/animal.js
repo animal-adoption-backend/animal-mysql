@@ -3,13 +3,9 @@ const Sequelize = require('sequelize');
 module.exports = class Animal extends Sequelize.Model {
     static init(sequelize) {
         return super.init({
-            userId: {
-                type: Sequelize.INTEGER,
-                allowNull: false,
-                unique: true,
-            },
             animalId: {
                 type: Sequelize.INTEGER,
+                unique: true,
             },
             title: {
                 type: Sequelize.STRING,
@@ -24,7 +20,7 @@ module.exports = class Animal extends Sequelize.Model {
                 type: Sequelize.STRING,
             },
             animalAge: {
-                type: Sequelize.STRING,
+                type: Sequelize.INTEGER,
             },
             animalGender: {
                 type: Sequelize.STRING,
@@ -35,9 +31,6 @@ module.exports = class Animal extends Sequelize.Model {
             animalPhoto: {
                 type: Sequelize.STRING,
             },
-            animalAge: {
-                type: Sequelize.INTEGER,
-            }
         }, {
             sequelize,
             timestamps: true,
